@@ -11,10 +11,10 @@ function addTask(){
         li.innerHTML = inputBox.value;
         listContainer.appendChild(li);
         let span = document.createElement("span");
-        span.innerHTML = "\u00D7";
+        span.innerHTML = "\u00d7"; // cross item to remove task
         li.appendChild(span);
     }
-    inputBox.value = '';
+    inputBox.value = "";
     saveData();
 }
 
@@ -24,7 +24,7 @@ listContainer.addEventListener("click", function(e){
         saveData();
     }
     else if(e.target.tagName === "SPAN"){
-        let li = e.target.parentElement.remove();
+        e.target.parentElement.remove();
         saveData();
     }
 }, false);
